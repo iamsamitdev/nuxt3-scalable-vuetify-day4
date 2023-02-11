@@ -1379,3 +1379,57 @@ Step 23: Create Backend Server with Strapi
 ---
 npx create-strapi-app@latest strapi-api  --quickstart
 
++++++++++++++++++++++++++++++++++
+| Day 4
+| Nuxt 3 JWT authentication with Strapi Backend
++++++++++++++++++++++++++++++++++
+
+Step 1: Create Backend Server with Strapi and MySQL Database
+---
+npx create-strapi-app@latest strapi-mysql-api
+
+Step 2: เซ็ตไฟล์ .env
+---
+STRAPI_URL=http://localhost:1337/api
+
+Step 3: เซ็ตค่า config ที่ไฟล์ nuxt.config.ts
+---
+// runtime config
+    runtimeConfig: {
+        public: {
+            strapi: {
+                url: process.env.STRAPI_URL || "http://localhost:1337/api",
+            },
+        },
+    },
+
+Step 4: เขียนส่วนการ login pages/index.vue
+---
+
+
+Step 5: สร้าง middleware สำหรับการ protect route
+---
+npx nuxi add middleware auth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
